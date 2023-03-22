@@ -1,25 +1,17 @@
--- disable netrw at the very start of init.lua
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
--- set the Nvim python virtual environment
-vim.g.python3_host_prog = '/home/latex/.local/share/virtualenvs/nvim-f7Xq2-eg/bin/python'
-vim.g.loaded_ruby_provider = 0
-vim.g.loaded_perl_provider = 0
-vim.g.loaded_node_provider = 0
--- Set `mapleader` before lazy so mappings are correct
-vim.g.mapleader = " " 
-vim.g.maplocalleader = " "
-
--- VimTeX settings
-vim.g.tex_flavor = 'latex'
-vim.g.vimtex_compiler_method = 'latexmk'
-vim.g.vimtex_view_method = 'zathura'
-vim.g.vimtex_view_general_viewer = 'zathura'
-vim.g.vimtex_compiler_progname = 'nvr'
-
--- clipboard
-vim.opt.clipboard = "unnamedplus"
+-- require global settings according to the OS
+local BinaryFormat = package.cpath:match("%p[\\|/]?%p(%a+)")
+if BinaryFormat == "dll" then
+	require("config.g_windows")
+    function os.name()
+        return "Windows"
+    end
+elseif BinaryFormat == "so" then
+	require("config.g_linux")
+    function os.name()
+        return "Linux"
+    end
+end
+BinaryFormat = nil
 
 -- bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -44,8 +36,14 @@ require("lazy").setup({
     }
 })
 
+-- colorscheme
 vim.cmd.colorscheme "catppuccin"
 
 -- personal specs
 require("config.keymaps")
 require("config.options")
+require 'nvim-treesitter.install'.compilers = { "clang" }
+-- local BinaryFormat = package.cpath:match("%p[\\|/]?%p(%a+)")
+-- if BinaryFormat == "dll" then
+-- end
+-- BinaryFormat = nil
