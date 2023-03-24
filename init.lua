@@ -42,8 +42,9 @@ vim.cmd.colorscheme "catppuccin"
 -- personal specs
 require("config.keymaps")
 require("config.options")
-require 'nvim-treesitter.install'.compilers = { "clang" }
--- local BinaryFormat = package.cpath:match("%p[\\|/]?%p(%a+)")
--- if BinaryFormat == "dll" then
--- end
--- BinaryFormat = nil
+
+local binaryformat = package.cpath:match("%p[\\|/]?%p(%a+)")
+if binaryformat == "dll" then
+    require 'nvim-treesitter.install'.compilers = { "clang" }
+end
+binaryformat = nil
