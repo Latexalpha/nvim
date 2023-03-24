@@ -41,19 +41,13 @@
 ## Plugins Info
 
 [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
-A modern plugin manager for Neovim
+A modern plugin manager for Neovim.
 
 [L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip)
 Snippet Engine for Neovim written in Lua.
 
 [iamcco/markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)
 markdown preview plugin for (neo)vim.
-
-[lervag/vimtex](https://github.com/lervag/vimtex)
-VimTeX: A modern Vim and neovim filetype plugin for LaTeX files.
-
-[folke/which-key.nvim](https://github.com/folke/which-key.nvim)
-Create key bindings that stick. WhichKey is a lua plugin for Neovim 0.5 that displays a popup with possible keybindings of the command you started typing.
 
 [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
 autopairs for neovim written by lua.
@@ -69,6 +63,12 @@ Nvim Treesitter configurations and abstraction layer.
 
 [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 Find, Filter, Preview, Pick. All lua, all the time.
+
+[lervag/vimtex](https://github.com/lervag/vimtex)
+VimTeX: A modern Vim and neovim filetype plugin for LaTeX files.
+
+[folke/which-key.nvim](https://github.com/folke/which-key.nvim)
+Create key bindings that stick. WhichKey is a lua plugin for Neovim 0.5 that displays a popup with possible keybindings of the command you started typing.
 
 ### LSP
 
