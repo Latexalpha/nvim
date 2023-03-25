@@ -17,12 +17,13 @@ return {
         },
         fmta(
             [[
-                \begin{frame}
+                \begin{frame}{<>}
                     <>
                 \end{frame}
             ]],
             {
                 i(1),
+                i(2),
             }
         )
     ),
