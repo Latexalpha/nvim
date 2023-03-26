@@ -1,7 +1,7 @@
 local g = vim.g
 
 -- set the Nvim python virtual environment
-g.python3_host_prog = 'C:/Users/heihi/.virtualenvs/torch20_py39-BJfwRo9f/Scripts/python'
+g.python3_host_prog = 'C:/Users/heihi/.virtualenvs/nvim-0P_60ueU/Scripts/python'
 
 -- VimTeX settings
 g.tex_flavor = 'latex'
