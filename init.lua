@@ -29,4 +29,3 @@ elseif binaryformat == "so" then
     end
 end
 binaryformat = nil
-
