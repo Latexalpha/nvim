@@ -9,6 +9,8 @@ g.vimtex_compiler_method = 'latexmk'
 -- g.vimtex_view_general_viewer = 'SumatraPDF' -- pdf reader settings
 -- g.vimtex_view_general_options = '-reuse-instance -forward-search @tex @line @pdf'
 
+vim.o.shell = vim.fn.executable('pwsh') and 'pwsh' or 'powershell'
+
 require("nvim-treesitter.install").compilers = { "clang" }
 
 vim.keymap.set("n", "<leader>lv",

@@ -10,14 +10,17 @@ return {
     version = false,
     event = "InsertEnter",
     dependencies = {
+        -- lsp completion
         "neovim/nvim-lspconfig",
         "hrsh7th/cmp-nvim-lsp",
-        "hrsh7th/cmp-buffer",
-        "hrsh7th/cmp-path",
-        "hrsh7th/cmp-cmdline",
+        -- lus completion
         "hrsh7th/cmp-nvim-lua",
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
+        -- buffer and path completion
+        "hrsh7th/cmp-buffer",
+        "hrsh7th/cmp-cmdline",
+        "hrsh7th/cmp-path",
      },
     opts = function()
         local luasnip = require("luasnip")
@@ -62,7 +65,6 @@ return {
             }),
             snippet = {
                 expand = function(args)
-                    local luasnip = require("luasnip")
                     if not luasnip then
                         return
                     end
@@ -71,6 +73,7 @@ return {
             },
         }
     end,
+
     config = function(_, opts)
         require("cmp").setup(opts)
     end,

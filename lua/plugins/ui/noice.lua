@@ -8,6 +8,7 @@ return {-- noicer ui
             "MunifTanjim/nui.nvim",
             lazy = true,
         },
+        { "rcarriga/nvim-notify" },
     },
 
     opts = {
