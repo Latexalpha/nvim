@@ -24,17 +24,6 @@ return{
             vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format { async = true } end, bufopts)
         end,
 
-        lspconfig.pyright.setup{
-            on_attach = on_attach,
-            settings = {
-                python = {
-                    analysis = {
-                        typeCheckingMode = "off",
-                    },
-                },
-            },
-        }
-
         lspconfig.lua_ls.setup{
             on_attach = on_attach,
             settings = {
@@ -45,6 +34,19 @@ return{
                             [vim.fn.expand("$VIMRUNTIME/lua")] = true,
                             [vim.fn.stdpath("config") .. "/lua"] = true,
                         },
+                    },
+                },
+            },
+        }
+
+        lspconfig.marksman.setup{}
+
+        lspconfig.pyright.setup{
+            on_attach = on_attach,
+            settings = {
+                python = {
+                    analysis = {
+                        typeCheckingMode = "off",
                     },
                 },
             },
@@ -69,8 +71,9 @@ return{
                 local mason_lspconfig = require("mason-lspconfig")
                 local servers = {
                     "lua_ls",
-                    "texlab",
+                    "marksman",
                     "pyright",
+                    "texlab",
                 }
                 mason.setup {
                   ui = {
