@@ -3,7 +3,7 @@ return {
     lazy = false,
     cmd = "NvimTreeToggle",
     keys = {
-        {"<leader>ft", "<cmd>NvimTreeToggle<CR>", desc = "NvimTreeToggle" },
+        {"<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "NvimTreeToggle" },
     },
     opts = {
         sort_by = "case_sensitive",
