@@ -101,7 +101,7 @@ return {
         },
         fmt(
             [[
-                \documentclass{beamer}
+                \documentclass[aspectratio=169]{beamer}
                 \mode<<presentation>>
                 {
                     \usetheme{NYU}      % 设置主题
@@ -132,43 +132,51 @@ return {
                 \renewcommand*{\bibfont}{\scriptsize} % 设置参考文献的字体大小
 
                 %%% 文档头
-                \title[机械与动力工程学院，机械系统与振动国家重点实验室]{小组组会汇报} % 前面的页脚左侧的内容，后面的是标题
-                \author{\textcolor{white}{赵尚宇}} % 也会出现在页脚右侧
-                \institute{\textcolor{white}{上海交通大学}}
+                \title[机械与动力工程学院，机械系统与振动国家重点实验室]{<>} % 前面的页脚左侧的内容，后面的是标题
+                \author{\vspace*{-8pt}\textcolor{white}{赵尚宇}} % 也会出现在页脚右侧
+                \institute{\vspace*{-8pt}\textcolor{white}{上海交通大学}}
                 \date{\textcolor{white}{\today}}
-                \titlegraphic{\centering\includegraphics[height=1.5cm]{./utils/_sjtu_badge.png}}
 
                 %%% 文档正文内容
                 \begin{document}
 
                     % Local background must be enclosed by curly braces for grouping.
                     {
-                    \usebackgroundtemplate{\includegraphics[width=\paperwidth]{./utils/background.png}}
-                    \begin{frame}[plain]
-                        \titlepage
-                    \end{frame}
+                        \usebackgroundtemplate{\includegraphics[width=\paperwidth]{./utils/background.pdf}}
+                        \begin{frame}[plain]
+                            \titlepage
+                        \end{frame}
                     }
 
                     % \begin{frame}{Outline}
                         % \tableofcontents
                     % \end{frame}
 
-                    <>
+                    \section[Section short title]{Section formal title} \label{section-1}
 
+                    \begin{frame}{frame title}
+                        <>
+                    \end{frame}
+
+                    \section{Reference} \label{section-ref}
                     \begin{frame}{参考文献}
                         \printbibliography
                     \end{frame}
-                    {
 
-                    \usebackgroundtemplate{\includegraphics[height=\paperheight]{./utils/background_end.png}}
-                    \begin{frame}[plain]
-                        \centering {\huge \textcolor{white}{谢 \; 谢！}}
-                    \end{frame}
+                    {
+                        \usebackgroundtemplate{\includegraphics[height=\paperheight]{./utils/background_end.pdf}}
+                        \begin{frame}[plain]
+                            \vspace*{\fill}
+                            \vskip18pt
+                            \centering {\huge \textbf{\textcolor{white}{感\,谢\,聆\,听}}}
+                            \vspace*{\fill}
+                        \end{frame}
                     }
                 \end{document}
             ]],
-            { 
+            {
                 i(1),
+                i(2),
             },
             {
                 delimiters = "<>"
