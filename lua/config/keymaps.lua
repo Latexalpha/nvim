@@ -9,4 +9,14 @@ map("t", "jk", "C-\\><C-n>")
 map('n', '<leader>df', vim.diagnostic.open_float, opts)
 map('n', '<leader>dp', vim.diagnostic.goto_prev, opts)
 map('n', '<leader>dn', vim.diagnostic.goto_next, opts)
-map('n', '<leader>ds', vim.diagnostic.setloclist, opts)
+map('n', '<leader>ds',vim.diagnostic.setloclist, opts)
+
+-- move selected line / block of text in visual mode
+map("x", "J", ":move '>+1<CR>gv-gv", opts)
+map("x", "K", ":move '<-2<CR>gv-gv", opts)
+
+vim.api.nvim_create_autocmd('LspAttach', {
+    callback = function(args)
+        vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { buffer = args.buf })
+    end,
+})
