@@ -13,7 +13,7 @@ opt.shiftwidth = 4
 opt.expandtab = true
 opt.autoindent = true
 -- wrap
-opt.wrap = false
+opt.wrap = true
 -- cursor
 opt.cursorline = true
 -- mouse
