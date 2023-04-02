@@ -96,6 +96,20 @@ return {
     ),
     s(
         {
+            trig = "highlight",
+            dscr = "Highligh text with NYUpurple color and textbf",
+        },
+        fmta(
+            [[
+                \textcolor{nyupurple}{\textbf{<>}}
+            ]],
+            {
+                i(1),
+            }
+        )
+    ),
+    s(
+        {
             trig = "beam",
             dscr = "LaTeX Beamer template"
         },

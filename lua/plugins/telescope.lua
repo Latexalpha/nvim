@@ -7,5 +7,7 @@ return {
     version = false,
     dependencies = { 
         "nvim-lua/plenary.nvim",
+        "BurntSushi/ripgrep",
+        "nvim-telescope/telescope-fzf-native.nvim",
     }
 }
