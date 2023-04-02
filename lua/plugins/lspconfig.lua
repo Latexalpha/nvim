@@ -1,5 +1,5 @@
 vim.diagnostic.config({
-  virtual_text = false
+    virtual_text = false
 })
 
 -- Show line diagnostics automatically in hover window
@@ -66,6 +66,7 @@ return{
     dependencies = {
         {
             "williamboman/mason.nvim",
+            build = ":MasonUpdate", -- :MasonUpdate updates registry contents
             cmd = {
                 "Mason",
                 "MasonInstall",
@@ -84,19 +85,19 @@ return{
                     "texlab",
                 }
                 mason.setup {
-                  ui = {
-                    -- Whether to automatically check for new versions when opening the :Mason window.
-                    check_outdated_packages_on_open = false,
-                    border = "single",
-                    icons = {
-                      package_pending = " ",
-                      package_installed = " ",
-                      package_uninstalled = " ",
+                    ui = {
+                        -- Whether to automatically check for new versions when opening the :Mason window.
+                        check_outdated_packages_on_open = false,
+                        border = "single",
+                        icons = {
+                            package_pending = " ",
+                            package_installed = " ",
+                            package_uninstalled = " ",
+                        },
                     },
-                  },
                 }
                 mason_lspconfig.setup {
-                  ensure_installed = servers,
+                    ensure_installed = servers,
                 }
             end,
         },
