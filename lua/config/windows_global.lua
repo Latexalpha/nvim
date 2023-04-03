@@ -1,15 +1,13 @@
 local g = vim.g
 
 -- set the Nvim python virtual environment
-g.python3_host_prog = "C:\\Users\\heihi\\.pyenv\\pyenv-win\\shims\\python"
+g.python3_host_prog = "C:/Users/heihi/miniconda3/python"
 
 -- VimTeX settings
 g.tex_flavor = 'latex'
 g.vimtex_compiler_method = 'latexmk'
 -- g.vimtex_view_general_viewer = 'SumatraPDF' -- pdf reader settings
 -- g.vimtex_view_general_options = '-reuse-instance -forward-search @tex @line @pdf'
-
-require("nvim-treesitter.install").compilers = { "clang" }
 
 vim.keymap.set("n", "<leader>lv",
     function()

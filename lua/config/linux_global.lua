@@ -1,8 +1,10 @@
 local g = vim.g
 
 -- set the Nvim python virtual environment
-g.python3_host_prog = '/home/latex/.pyenv/shims/python'
-
+vim.cmd([[
+    if has("nvim") && !empty($CONDA_PREFIX)
+        let g:python3_host_prog = $CONDA_PREFIX . "/bin/python"
+]])
 -- VimTeX settings
 g.tex_flavor = 'latex'
 g.vimtex_compiler_method = 'latexmk'
