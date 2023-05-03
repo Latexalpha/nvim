@@ -6,6 +6,7 @@ return {
         input = {
             enabled = true,
             prompt_align = "center",
+            title_pos = "center",
             insert_only = true,
             start_in_insert = true,
             mappings = {

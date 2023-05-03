@@ -1,6 +1,5 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    version = false, -- last release is way too old and doesn't work on Windows
     event = { "BufReadPost", "BufNewFile" },
     dependencies = {
       {
@@ -33,13 +32,13 @@ return {
        ensure_installed = {
         "bash",
         "c",
-        "help",
+        "vimdoc",
         "lua",
         "luap",
         "markdown",
         "markdown_inline",
         "python",
-	"regex",
+	    "regex",
         "vim",
         "yaml",
       },
