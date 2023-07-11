@@ -41,3 +41,7 @@ map("n", "<leader>dr", function() require("dap").repl.open() end, { desc = "Open
 map("n", "<leader>do", function() require("dapui").open() end, { desc = "Open DAPui" })
 map("n", "<leader>dc", function() require("dapui").close() end, { desc = "Close DAPui" })
 map("n", "<leader>dt", function() require("dapui").toggle() end, { desc = "Toggle DAPui" })
+
+-- copilot settings
+vim.g.copilot_no_tab_map = true
+vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
